@@ -1,0 +1,13 @@
+<div class="login-background">
+  <div class="login-container">
+    <br> <br>
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert"><strong>Fout: </strong>{{errorMessage}}</div>
+    <form #loginForm="ngForm" (ngSubmit)="submitForm(loginForm)">
+      <input class="form-control" [(ngModel)]="model.email" type="text" name="email" placeholder="username" #userName="ngModel" ngModel required> <br>
+
+      <input class="form-control" [(ngModel)]="model.password" type="password" name="password" placeholder="password" #email="ngModel" ngModel required> <br>
+
+      <button type="submit" class="login-button" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  </div>
+</div>
